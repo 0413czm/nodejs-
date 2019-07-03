@@ -44,7 +44,8 @@ app.post('/user/add', (req, res) => {
     })
     // 删除用户
 app.get('/user/del', (req, res) => {
-    res.send(req.query.id);
+    userServse.delUser(parseInt(req.query.id));
+    res.redirect('/user/list');
 })
 app.listen(59999, () => {
     console.log('visist http://localhost:59999/');

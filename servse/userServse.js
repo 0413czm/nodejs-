@@ -61,3 +61,20 @@ function saveJson(json) {
         encoding: 'utf8'
     })
 }
+
+// 删除用户
+exports.delUser = function(id) {
+    if (id > 0 && typeof(id) === 'number') {
+        const index = dbJson.users.findIndex(u => u.id == id);
+        dbJson.users.splice(index, 1);
+        saveJson(dbJson);
+        return {
+            msg: '删除成功',
+            code: 1
+        }
+    }
+    return {
+        msg: '删除失败,id必须是大于0的整数',
+        code: 0
+    }
+}
