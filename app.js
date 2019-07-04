@@ -69,6 +69,9 @@ app.post('/user/edit', (req, res) => {
         res.render('users/edit.art', req.body);
     }
 })
+app.post('/api', (req, res) => {
+    res.json(req.body);
+})
 app.listen(59999, () => {
     console.log('visist http://localhost:59999/');
 })
