@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="/lib/simplePagination/jquery.simplePagination.js"></script>
+    <link rel="stylesheet" href="/lib/simplePagination/simplePagination.css">
     <title>Document</title>
 </head>
 
@@ -46,7 +49,9 @@
     <!-- {{each users as val index}}
     <p>{{val.number}} ---- {{val.id}} ---- {{val.name}} --- {{val.adress}} ---- {{val.email}} --- {{val.zip}}</p>
     {{/each}} -->
+    <div class="pager"></div>
 </body>
+
 <script>
     $(function() {
         // 给删除数据提示
@@ -58,6 +63,19 @@
             }
             // 真删除数据
         })
+
+        // 初始化分页的标签
+        $('.pager').pagination({
+            currentPage: "{{page}}",
+            items: "{{count}}",
+            itemsOnPage: 10,
+            cssStyle: 'light-theme',
+            prevText: '上一页',
+            nextText: '下一页',
+            onPageClick: function(pageNumber, event) {
+                window.location.href = "/user/list?page=" + pageNumber + '&size=10'
+            }
+        });
     })
 </script>
 

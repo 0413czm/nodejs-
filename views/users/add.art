@@ -13,7 +13,7 @@
     <h1>添加用户信息</h1>
     <!-- application/x-www-form-urlencoded 拼接传参 body-parser -->
     <!-- multipart/form-data 文件提交 multer 中间件-->
-    <form action="/user/add" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/user/add" method="POST" enctype="multipart/form-data">
         <table class="table">
             <tr>
                 <td>用户名</td>

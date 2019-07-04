@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>修改用户信息</h3>
+    <form action="/user/edit" method="POST">
+        <table>
+            <tr>
+                <td>编号</td>
+                <td>
+                    {{id}}
+                    <input type="hidden" value="{{id}}" name="id">
+                </td>
+            </tr>
+            <tr>
+                <td>用户名</td>
+                <td>
+                    <input type="text" name="name" value="{{name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>邮箱</td>
+                <td>
+                    <input type="email" name="email" value="{{email}}">
+                </td>
+            </tr>
+            <tr>
+                <td>电话</td>
+                <td>
+                    <input type="number" name="number" value="{{number}}">
+                </td>
+            </tr>
+            <tr>
+                <td>地址</td>
+                <td>
+                    <input type="text" name="address" value="{{address}}">
+                </td>
+            </tr>
+            <tr>
+                <td>邮编</td>
+                <td>
+                    <input type="number" name="zip" value="{{zip}}">
+                </td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td>
+                    <input type="date" name="birthday" value="{{birthday}}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="reset" value="清空">
+                    <input type="submit" value="修改">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+</html>

@@ -23,19 +23,23 @@ jsonDB.users || (jsonDB.users = []);
 // }
 //#endregion
 
+// 把数据写入到db.json
+// 参考：http://mockjs.com/
 let data = Mock.mock({
-    "users|33": [{
+    "users|133": [{
         "id|+1": 20000,
         "name": "@cname",
         "email": "@email",
-        "number": "@natural(1320000000,13300000000)",
+        "number": "@natural(132000000,133000000)",
         "address": "@county(true)",
         "zip": "@zip",
         "birthday": "@date('yyyy-MM-dd')"
     }]
 });
 
+// es6中的展开运算符。展开字符串、对象、数组！
 jsonDB.users.push(...data.users);
+// jsonDB.users = data.users;
 // 把数据写入到db.json中
 fs.writeFileSync(path.join(__dirname, 'db.json'), JSON.stringify(jsonDB), {
     encoding: 'utf8'

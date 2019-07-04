@@ -78,3 +78,29 @@ exports.delUser = function(id) {
         code: 0
     }
 }
+
+// 根据用户id找数据
+exports.getUserId = function(id) {
+        if (typeof(id) === 'number' && id > 0) {
+            return dbJson.users.find(u => u.id == id);
+        }
+        return null;
+    }
+    // 修改用户
+exports.editUser = function(user) {
+    if (user && user.id > 0 && typeof(user.id) === 'number') {
+        const editIndex = dbJson.users.findIndex(u => u.id === user.id);
+        dbJson.users.splice(editIndex, 1, user); // 替换数据
+        saveJson(dbJson); // 保存数据
+        return {
+            code: 1,
+            msg: '修改成功',
+            data: user
+        }
+    }
+    return {
+        msg: '修改数据不规范',
+        code: 0,
+        data: user
+    }
+}
