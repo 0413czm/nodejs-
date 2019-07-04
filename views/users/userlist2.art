@@ -46,9 +46,6 @@
             {{/each}}
         </tbody>
     </table>
-    <!-- {{each users as val index}}
-    <p>{{val.number}} ---- {{val.id}} ---- {{val.name}} --- {{val.adress}} ---- {{val.email}} --- {{val.zip}}</p>
-    {{/each}} -->
     <div class="pager"></div>
 </body>
 

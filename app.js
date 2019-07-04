@@ -7,11 +7,14 @@ const bodyParser = require('body-parser');
 const multer = require('multer'); // v1.0.5
 const art_express = require('express-art-template');
 const userServse = require('./servse/userServse'); // 引入服务
-
+const router = require('./routers/idnex');
+const apiRouter = require('./routers/apirouter');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded // 解析参数 params
 // app.use(multer());
 let upload = multer();
+app.use('/stu', router);
+app.use('/api', apiRouter);
 // upload.array(),
 // 设置模版引擎
 app.engine('art', art_express);
