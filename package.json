@@ -17,7 +17,7 @@
     "multer": "^1.4.1"
   },
   "devDependencies": {
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "mockjs": "^1.0.1-beta3"
   }
 }
